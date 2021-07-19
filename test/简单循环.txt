@@ -1,0 +1,11 @@
+const int maxn = 1000;
+int main()
+{
+    int num1 = 1 , num2 = 2 , sum = 0 ;
+    int res = 0 , ans;
+    for(int i = 1 ; i <= maxn ; i = i + 1)
+    {
+        sum = sum + 1;
+    }
+    ans = sum;
+}

@@ -1,0 +1,28 @@
+const int maxn = 20;
+
+int f(int n )
+{
+    if(n == 1) return 1;
+    int temp1 = n - 1;
+    return n + f(temp1);
+}
+int fic(int n)
+{
+    if(n == 1) return 1;
+    int temp2 = n - 1;
+    return n *fic(temp2);
+}
+int main()
+{
+    int sum1 = f(10);
+    int sum2 = fic(3);
+    int flag ;
+    if(sum1 > sum2 )
+    {
+        flag = 1;
+    }
+    else 
+    {
+        flag = 2;
+    }
+}

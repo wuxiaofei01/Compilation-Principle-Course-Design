@@ -1,0 +1,29 @@
+const int maxn = 100;
+int num1 , num2 ;
+int students[maxn];
+void init(int n)
+{
+    for(int i = 1 ; i <= n ; i = i + 1)
+    {
+        students = i ;
+    }
+}
+
+int Sum(int n)
+{
+    int res = 0;
+    for(int i = 1 ; i <= n ; i = i + 1)
+    {
+        res = students[i] + res;
+    }
+    return res;
+}
+
+int main()
+{
+    int n = 100;
+    init(n);
+    int sum = Sum(n);
+    int ave = sum / n;
+}
+

@@ -1,0 +1,39 @@
+const int maxn = 1000;
+int a[maxn];
+int a , b , c , d , arr;
+char str ;
+
+int get_max()
+{
+    int ans = 0;
+    for(int i = 0 ; i < maxn ; i = i + 1)
+    {
+        if(ans  < arr[i])
+        {
+            ans = arr[i];
+        }
+    }
+    return ans;
+}
+
+int main()
+{
+    a = get_max();
+    arr [50] = 10000;
+    b = get_max();
+    while(a)
+    {
+        b = b - 1;
+    }
+    while(b)
+    {
+        c =  c + 1;
+    }
+    if(c < 100)
+    {
+        d = 10;
+    }
+
+
+    return 0;
+}

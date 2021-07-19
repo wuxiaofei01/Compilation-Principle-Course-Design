@@ -1,0 +1,25 @@
+const int maxn = 1000;
+int f(int a)
+{
+    if(a == 1) return 1;
+    int b = a - 1;
+    return a * f( b );
+}
+int max(int a , int b)
+{
+    if(a > b) return a;
+    return b ;
+}
+int main()
+{
+    int num1 = 1 , num2 = 2 , sum = 0 , i = 0;
+    int res = 0 , ans;
+    res = f(5);
+    for(i = 1 ; i <= maxn ; i = i + 1)
+    {
+        sum = sum + 1;
+    }
+    ans = max(sum , res);
+
+    return 0;
+}
