@@ -1,0 +1,50 @@
+当前语法分析已经大致完成，能够做到的目标以下示例(不完全包括，只有典型样例)
+1： 
+    int i , j , k
+    缺少 ;
+2：
+    int i , j , k ,
+    缺少标识符
+3:
+    sum = sum + ;
+    表达式错误
+4:
+    int main(
+    主函数错误
+5:
+    int i , j  ;
+    k = 1;
+    存在未定义
+6:
+    return n + f(temp1;
+    函数缺少 )
+7:
+    int temp1 = n - 1
+    缺少 ;
+8:
+    if(sum1 > sum2 )
+    {
+        flag = 1;
+    {}不匹配
+9:
+    int fic(int n)
+    {
+        if(n == 1) return 1;
+        int temp2 = n - 1;
+        return n *fi(temp2);
+    }
+    存在未定义
+10:
+    int f(int n )//此处为函数声明
+    .....
+    int sum1 = f(10,1); //此处为函数调用
+    函数参数数目错误
+11:
+    if(sum1  sum2 )
+    算术表达式错误
+12:
+    int f int n )//此处应为 函数声明
+    缺少 ;
+13:
+    int f(int n  //此处为 函数声明
+    缺少 )

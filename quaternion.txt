@@ -1,0 +1,59 @@
+int maxn _ _
+= 1000 _ maxn
+int (a|maxn) _ _
+int a _ _
+int b _ _
+int c _ _
+int d _ _
+int arr _ _
+char str _ _
+f get_max int _
+
+int ans _ _
+= 0 _ ans
+int i _ _
+= 0 _ i
+for _ _ _
+
+< i maxn t0
+do t0 _ _
++ i 1 t1
+= t1 _ i
+< ans (arr|i) t2
+if t2 _ _
+= (arr|i) _ ans
+ie 0 _ _
+
+fe _ _ _
+
+return ans _ _
+f end get_max _
+f main int _
+
+call get_max _ _
+= get_max_ret _ a
+= 10000 _ (arr|50)
+call get_max _ _
+= get_max_ret _ b
+while _ _ _
+
+!= a 0 t3
+do t3 _ _
+- b 1 t4
+= t4 _ b
+we _ _ _
+while _ _ _
+
+!= b 0 t5
+do t5 _ _
++ c 1 t6
+= t6 _ c
+we _ _ _
+
+< c 100 t7
+if t7 _ _
+= 10 _ d
+ie 0 _ _
+
+return 0 _ _
+f end main _

@@ -1,0 +1,105 @@
+DSEG SEGMENT
+main_ret DW 0
+get_max_ret DW 0
+ans DW 0
+i DW 0
+maxn DW 0
+a DW 1000 DUP(0)
+a DW 0
+b DW 0
+c DW 0
+d DW 0
+arr DW 0
+str DW 0
+DSEG ENDS
+
+SSEG SEGMENT STACK
+SKTOP DW 300 DUP(0)
+SSEG ENDS
+
+CSEG SEGMENT
+ASSUME CS:CSEG,DS:DSEG,SS:SSEG
+
+main PROC NEAR
+block1:CALL get_max
+MOV AX,get_max_ret
+MOV a,AX
+MOV AX,10000
+MOV SI,50
+ADD SI,SI
+MOV arr[SI],AX
+CALL get_max
+MOV AX,get_max_ret
+MOV b,AX
+block2:MOV AX,a
+MOV BX,0
+CMP AX,BX
+JE block3
+MOV AX,b
+SUB AX,1
+MOV b,AX
+JMP block2
+block3:MOV AX,b
+MOV BX,0
+CMP AX,BX
+JE block4
+MOV AX,c
+ADD AX,1
+MOV c,AX
+JMP block3
+block4:MOV AX,c
+MOV BX,100
+CMP AX,BX
+JGE block5
+MOV AX,10
+MOV d,AX
+block5:MOV CX,0
+MOV main_ret,CX
+RET
+main ENDP
+
+block6:get_max PROC NEAR
+block7:MOV AX,0
+MOV ans,AX
+MOV AX,-1
+MOV i,AX
+MOV BX,maxn
+DEC BX
+MOV maxn,BX
+block8:MOV AX,i
+MOV BX,maxn
+CMP AX,BX
+JGE block9
+MOV AX,i
+ADD AX,1
+MOV i,AX
+MOV AX,ans
+MOV SI,i
+ADD SI,SI
+MOV BX,arr[SI]
+CMP AX,BX
+JGE block9
+MOV SI,i
+ADD SI,SI
+MOV AX,arr[SI]
+MOV ans,AX
+block9:JMP block8
+block10:MOV CX,ans
+MOV get_max_ret,CX
+RET
+get_max ENDP
+
+block11:
+START:MOV AX,DSEG
+MOV DS,AX
+MOV AX,SSEG
+MOV SS,AX
+
+MOV AX,1000
+MOV maxn,AX
+block12:CALL main
+
+MOV AH,4CH
+INT 21H
+CSEG ENDS
+END START
